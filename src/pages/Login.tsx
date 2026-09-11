@@ -55,7 +55,7 @@ export default function Login() {
         </div>
 
         <div className="card p-8">
-          <h2 className="text-2xl font-bold text-slate-900 text-center">Sign In</h2>
+          <h2 className="text-2xl font-bold text-slate-900 text-center">Sign in</h2>
           <p className="mt-1 text-sm text-slate-500 text-center">
             Welcome back! Sign in to continue.
           </p>
@@ -105,7 +105,7 @@ export default function Login() {
               {loading ? (
                 <span className="spinner w-4 h-4" />
               ) : (
-                'Sign In'
+                'Sign in'
               )}
             </button>
           </form>

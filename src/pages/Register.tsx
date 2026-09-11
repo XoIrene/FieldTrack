@@ -20,6 +20,7 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [role, setRole] = useState<UserRole>('worker');
   const [adminCode, setAdminCode] = useState('');
   const [loading, setLoading] = useState(false);
@@ -88,7 +89,7 @@ export default function Register() {
         </div>
 
         <div className="card p-8">
-          <h2 className="text-2xl font-bold text-slate-900 text-center">Create Account</h2>
+          <h2 className="text-2xl font-bold text-slate-900 text-center">Register</h2>
           <p className="mt-1 text-sm text-slate-500 text-center">
             {role === 'admin'
               ? 'Register as an administrator'
@@ -227,13 +228,21 @@ export default function Register() {
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <input
                   id="confirmPassword"
-                  type={showPassword ? 'text' : 'password'}
-                  className="input pl-10"
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  className="input pl-10 pr-10"
                   placeholder="Confirm your password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   autoComplete="new-password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 
@@ -241,7 +250,7 @@ export default function Register() {
               {loading ? (
                 <span className="spinner w-4 h-4" />
               ) : (
-                'Create Account'
+                'Register'
               )}
             </button>
           </form>
@@ -249,7 +258,7 @@ export default function Register() {
           <p className="mt-6 text-center text-sm text-slate-500">
             Already have an account?{' '}
             <Link to="/login" className="font-medium text-primary-600 hover:text-primary-700">
-              Sign In
+              Sign in
             </Link>
           </p>
         </div>
