@@ -13,7 +13,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
-        name: 'FieldTrack',
+        name: 'FieldTrack Attendance',
         short_name: 'FieldTrack',
         description: 'Simple. Secure. Accountable Field Attendance.',
         theme_color: '#4338CA',
